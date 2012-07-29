@@ -3,8 +3,8 @@
 	= @user.errors.full_messages.each do |msg|
 		%li= msg
 = form_for @user, :url => signup_path, :validate => true do |f|
-	= f.text_field :login, placeholder: "username"
-	= f.text_field :email, placeholder: "email"
-	= f.password_field :password, placeholder: "password"
-	= f.password_field :password_confirmation, placeholder: "password (repeat)"
-	= f.submit "Signup", disable_with: 'Submiting...'
+	= f.text_field :login, placeholder: t('username')
+	= f.text_field :email, placeholder: t('email')
+	= f.password_field :password, placeholder: t('password')
+	= f.password_field :password_confirmation, placeholder: t('password_confirmation')
+	= f.submit t('signup'), disable_with: t('form_disable_with')

@@ -11,7 +11,7 @@ class Post
   belongs_to :user
   has_many :responses, :dependent => :delete
 
-  validates :content, presence: true
+  validates :title, presence: true
 
   before_create :set_created_at
 

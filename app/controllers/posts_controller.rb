@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   	if @post.save
   		redirect_to posts_path
   	else
-  		redner :new
+  		redner new_post_path
   	end
   end
 
