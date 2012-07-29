@@ -1,0 +1,12 @@
+.post
+  .info
+    %span.title= post.title
+    %span.meta
+      = post.user.login
+      = format_time post.created_at
+      - if @is_home
+        = link_to "[Reply]", post_path(post)
+  .content
+    ~ format_text post.content
+    - if @is_home and post.responses.any?
+      = render :partial => 'res', :collection => post.responses

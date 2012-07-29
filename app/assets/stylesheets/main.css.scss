@@ -1,0 +1,20 @@
+html, body {
+  font-size: 14px;
+}
+
+.post {
+	padding: 10px;
+	border-bottom: 1px dashed #E3E2E1;
+
+	.title {
+		font-weight: bold;
+	}
+}
+
+.res {
+	background-color: #D6DAF0;
+	border-style: none none solid none;
+	border-width: medium 1px 1px medium;
+	padding: 10px;
+	display: table;
+}
