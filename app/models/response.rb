@@ -19,6 +19,7 @@ class Response
   scope :recent, order_by([[:created_at, :desc]]).limit(5)
 
   def update_post
+    post.set :actived_at, self.created_at.utc
     post.inc :res_count, 1
   end
 

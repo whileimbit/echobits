@@ -6,6 +6,7 @@ class Post
   field :content
   field :created_at, type: Time
   field :updated_at, type: Time
+  field :actived_at, type: Time
   field :res_count, type: Integer, default: 0
 
   belongs_to :user
@@ -17,10 +18,10 @@ class Post
 
   attr_accessible :title, :content
 
-  scope :active, order_by([[:created_at, :desc]])
+  scope :active, order_by([[:actived_at, :desc]])
 
   def set_created_at
     self.created_at = Time.now.utc
+    self.actived_at = self.created_at
   end
-
 end
