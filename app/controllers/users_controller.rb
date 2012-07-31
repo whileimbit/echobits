@@ -25,6 +25,7 @@ class UsersController < ApplicationController
       login_as user
       redirect_to posts_url
     else
+      flash[:error] = t('users.login_error')
       redirect_to login_url
     end
   end

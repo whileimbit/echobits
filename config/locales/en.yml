@@ -15,6 +15,9 @@ en:
 
   form_disable_with: "Posting..."
 
+  users:
+    login_error: "username and password doesn't match"
+
   posts:
     title: "title"
     new: "New Post"
