@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_filter :require_logined, :only => [:new, :create]
+	before_filter :require_logined, :except => [:index]
   before_filter :find_post, :only => [:show]
 
   def index

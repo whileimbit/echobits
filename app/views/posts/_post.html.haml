@@ -4,7 +4,7 @@
     %span.meta
       = post.user.login
       = format_time post.created_at
-      - if @is_home
+      - if @is_home and current_user
         = link_to t('posts.reply'), post_path(post)
   .content
     ~ format_text post.content
