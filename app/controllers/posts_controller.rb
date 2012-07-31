@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_filter :find_post, :only => [:show]
 
   def index
-  	@posts = Post.active
+  	@posts = Post.active.page params[:page]
     @is_home = true
   end
 
