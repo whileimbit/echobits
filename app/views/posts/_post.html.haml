@@ -9,4 +9,4 @@
   .content
     ~ format_text post.content
     - if @is_home and post.responses.any?
-      = render :partial => 'res', :collection => post.responses.latest
+      = render :partial => 'res', :collection => post.responses.recent
