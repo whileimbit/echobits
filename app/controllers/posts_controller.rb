@@ -22,7 +22,8 @@ class PostsController < ApplicationController
 
   def show
     if request.post?
-      @res = @post.responses.new params[:response]
+      @res = current_user.responses.new params[:response]
+      @res.post = @post
       if @res.save
         redirect_to @post
       end

@@ -1,6 +1,7 @@
 .res
   .info
     %span.meta
-      = res.post.user.login
+      -if res.user
+        = res.user.login
       = format_time res.created_at
   ~ format_text res.content

@@ -18,6 +18,7 @@ class User
   attr_accessible :login, :name, :email, :password, :password_confirmation
 
   has_many :posts
+  has_many :responses
 
   def to_param
     login
