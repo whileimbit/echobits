@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_filter :require_no_logined, :except => [:destroy]
+  before_filter :require_no_logined, :except => [:destroy, :index]
   before_filter :require_logined, :only => [:destroy]
+  before_filter :require_admin, :only => [:index]
 
   def new
     @user = User.new
@@ -34,5 +35,9 @@ class UsersController < ApplicationController
   def destroy
     logout
     redirect_to posts_path
+  end
+
+  def index
+    @users = User.active.page params[:page]
   end
 end

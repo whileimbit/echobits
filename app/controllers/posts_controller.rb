@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   def index
   	@posts = Post.active.page params[:page]
     @is_home = true
+    @users_count = User.count
   end
 
   def new

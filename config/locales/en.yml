@@ -15,9 +15,14 @@ en:
 
   form_disable_with: "Posting..."
 
+  layouts:
+    header:
+      users: "Users"
+
   users:
     login_error: "username and password doesn't match"
 
+  users_count: "Users: %{count}"
   posts:
     title: "title"
     new: "New Post"

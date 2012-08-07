@@ -45,4 +45,10 @@ class ApplicationController < ActionController::Base
     session.delete(:user_id)
     @current_user = nil
   end
+
+  def require_admin
+    unless current_user.admin?
+      redirect_to root_url
+    end
+  end
 end

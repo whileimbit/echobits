@@ -6,6 +6,7 @@ class User
   field :email, type: String
   field :password_digest, type: String
   field :access_token, type: String
+  field :created_at, type: Time
 
   has_secure_password
 
@@ -15,12 +16,25 @@ class User
   validates :password, :presence => true, :on => :create
   validates :password, confirmation: true, :length => {:minimum => 6, :allow_nil => true}
 
+  before_create :set_created_at
+
   attr_accessible :login, :name, :email, :password, :password_confirmation
 
   has_many :posts
   has_many :responses
 
+  scope :active, order_by([[:created_at, :desc]])
+
   def to_param
     login
   end
+
+  def set_created_at
+    self.created_at = Time.now.utc
+  end
+
+  def admin?
+    APP_CONFIG['admin_emails'].include?(self.email)
+  end
+
 end

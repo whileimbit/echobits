@@ -1,6 +1,9 @@
-= form_for @res, url: post_path(@post) do |f|
-  = f.text_area :content
-  = f.submit t('posts.reply'), disable_with: t('form_disable_with')
-= render :partial => 'post', :locals => { :post => @post }
-- if @ress.any?
-  = render :partial => 'res', :collection => @ress
+.wrapper
+  .container
+    .content
+      = form_for @res, url: post_path(@post) do |f|
+        = f.text_area :content
+        = f.submit t('posts.reply'), disable_with: t('form_disable_with')
+      = render :partial => 'post', :locals => { :post => @post }
+      - if @ress.any?
+        = render :partial => 'res', :collection => @ress

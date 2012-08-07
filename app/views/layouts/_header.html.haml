@@ -1,0 +1,10 @@
+%header
+  = link_to t('home'), root_url
+  - if current_user
+    = link_to t('new_post'), new_post_path
+    = link_to t('logout'), logout_path
+  - else
+    = link_to t('signup'), signup_path
+    = link_to t('login'), login_path
+  - if current_user and current_user.admin?
+    = link_to t('.users'), users_path

@@ -1,9 +1,0 @@
-%header
-  %ul
-    %li= link_to t('home'), root_url
-    - if current_user
-      %li= link_to t('new_post'), new_post_path
-      %li= link_to t('logout'), logout_path
-    - else
-      %li= link_to t('signup'), signup_path
-      %li= link_to t('login'), login_path

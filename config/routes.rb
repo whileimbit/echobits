@@ -16,6 +16,8 @@ EchoBits::Application.routes.draw do
 
   get 'logout' => 'users#destroy', :as => :logout
 
+  resources :users, :only => [:index]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
