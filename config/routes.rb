@@ -8,15 +8,12 @@ EchoBits::Application.routes.draw do
     resources :responses, :only => [:create]
   end
 
-  get 'signup' => 'users#new', :as => :signup
-  post 'signup' => 'users#create', :as => :signup
-  
-  get 'login' => 'users#login', :as => :login
-  post 'login' => 'users#act_login', :as => :login
+  get 'signup' => 'users#new', :as => :signup  
+  get 'login' => 'user_sessions#new', :as => :login
+  delete 'logout' => 'user_sessions#destroy', :as => :logout
 
-  get 'logout' => 'users#destroy', :as => :logout
-
-  resources :users, :only => [:index]
+  resources :users, :only => [:index, :create]
+  resources :user_sessions, :only => [:create]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

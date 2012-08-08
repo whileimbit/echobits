@@ -4,7 +4,7 @@
       ul
       = @user.errors.full_messages.each do |msg|
         li= msg
-    = form_for @user, :url => signup_path, :validate => true do |f|
+    = form_for @user, :url => users_path, :validate => true do |f|
       dl
         dd= f.text_field :login, placeholder: t('username')
         dd= f.text_field :email, placeholder: t('email')
