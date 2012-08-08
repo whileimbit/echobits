@@ -10,6 +10,6 @@ module ApplicationHelper
   end
 
   def format_time(time)
-    timeago_tag time, :date_only => false, :limit => 1.hours.ago, :format => "%Y-%m-%d %H:%M"
+    timeago_tag time, :limit => 1.weeks.ago
   end
 end
