@@ -8,10 +8,10 @@ gem 'rails', '3.2.7'
 gem "mongoid", "~> 3.0.0"
 
 gem 'bcrypt-ruby'
-gem 'haml-rails', '>= 0.3.4'
 gem 'redcarpet'
 gem 'rails-timeago'
 gem 'kaminari'
+gem 'slim'
 
 # Gems used only for assets and not required
 # in production environments by default.

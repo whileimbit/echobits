@@ -16,3 +16,4 @@
 
 config/mongoid.yml
 config/config.yml
+.DS_Store

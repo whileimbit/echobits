@@ -1,0 +1,13 @@
+.wrapper
+  .main
+    - if @user.errors.any?
+      ul
+      = @user.errors.full_messages.each do |msg|
+        li= msg
+    = form_for @user, :url => signup_path, :validate => true do |f|
+      dl
+        dd= f.text_field :login, placeholder: t('username')
+        dd= f.text_field :email, placeholder: t('email')
+        dd= f.password_field :password, placeholder: t('password')
+        dd= f.password_field :password_confirmation, placeholder: t('password_confirmation')
+        dd= f.submit t('signup'), disable_with: t('form_disable_with')

@@ -1,0 +1,9 @@
+.wrapper
+  .main
+    - if @users
+      - @users.each do |user|
+        table
+          tr
+            td= user.login
+            td= user.email
+            td= format_time user.created_at

@@ -6,6 +6,10 @@ header {
   width: 960px;
   padding: 10px;
   margin: 0 auto;
+
+  a {
+    margin-right: 5px;
+  }
 }
 
 .wrapper {
@@ -44,6 +48,12 @@ dl {
 
   .title {
     font-weight: bold;
+  }
+
+  .info {
+    span {
+      margin-right: 5px;
+    }
   }
 }
 
