@@ -1,6 +1,7 @@
 class Post
   include Mongoid::Document
   include Mongoid::Timestamps::Created
+  include Mongoid::Token
 
   field :title
   field :content
@@ -8,6 +9,8 @@ class Post
   field :updated_at, type: Time
   field :actived_at, type: Time
   field :res_count, type: Integer, default: 0
+
+  token :length => 8
 
   belongs_to :user
   has_many :responses, :dependent => :delete

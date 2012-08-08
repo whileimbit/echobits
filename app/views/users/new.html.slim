@@ -1,10 +1,10 @@
 .wrapper
   .main
-    - if @user.errors.any?
-      ul
-      = @user.errors.full_messages.each do |msg|
-        li= msg
     = form_for @user, :url => users_path, :validate => true do |f|
+      - if @user.errors.any?
+        ul
+        = @user.errors.full_messages.each do |msg|
+          li= msg
       dl
         dd= f.text_field :login, placeholder: t('username')
         dd= f.text_field :email, placeholder: t('email')

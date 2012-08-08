@@ -36,6 +36,6 @@ class PostsController < ApplicationController
   protected
 
   def find_post
-    @post = Post.find(params[:id])
+    @post = Post.find_by_token(params[:id])
   end
 end

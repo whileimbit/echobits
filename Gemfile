@@ -12,6 +12,7 @@ gem 'redcarpet'
 gem 'rails-timeago'
 gem 'kaminari'
 gem 'slim'
+gem 'mongoid_token', '~> 1.1.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
