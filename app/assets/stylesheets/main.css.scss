@@ -3,9 +3,9 @@ html, body {
 }
 
 header {
-	width: 960px;
-	padding: 10px;
-	margin: 0 auto;
+  width: 960px;
+  padding: 10px;
+  margin: 0 auto;
 }
 
 .wrapper {
@@ -17,53 +17,52 @@ header {
   padding-top: 30px;
 
   &:after {
-	  content: '.';
-	  display: block;
-	  clear: both;
-	  visibility: hidden;
-	  height: 0;
-	}
+    content: '.';
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+  }
 }
 
-.container {
-  width: 100%;
+.main {
+  width: 700px;
   float: left;
   overflow: hidden;
+  border: 1px dashed #E3E2E1;
 }
 
-.content {
-  padding: 0 270px 0 0;
-
-  dl {
-  	dd {
-  		margin-bottom: 5px;
-  	}
+dl {
+  dd {
+    margin-bottom: 5px;
   }
 }
 
 .post {
-	padding: 10px;
-	border-bottom: 1px dashed #E3E2E1;
+  padding: 10px;
+  border-bottom: 1px dashed #E3E2E1;
 
-	.title {
-		font-weight: bold;
-	}
+  .title {
+    font-weight: bold;
+  }
 }
 
 .res {
-	background-color: #D6DAF0;
-	border-style: none none solid none;
-	border-width: medium 1px 1px medium;
-	padding: 10px;
-	display: table;
+  background-color: #D6DAF0;
+  border-style: none none solid none;
+  border-width: medium 1px 1px medium;
+  padding: 10px;
+  display: table;
 }
 
 .sideRight {
   float: left;
   margin-right: -3px;
-  width: 250px;
-  margin-left: -250px;
+  width: 230px;
+  margin-left: 10px;
+  padding-left: 10px;
   position: relative;
+  border: 1px dashed #E3E2E1;
 }
 
 footer {

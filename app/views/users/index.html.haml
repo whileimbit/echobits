@@ -1,9 +1,8 @@
 .wrapper
-  .container
-    .content
-      - if @users
-        - @users.each do |user|
-          %table
-            %tr
-              %td= user.login
-              %td= user.created_at
+  .main
+    - if @users
+      - @users.each do |user|
+        %table
+          %tr
+            %td= user.login
+            %td= user.created_at

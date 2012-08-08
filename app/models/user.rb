@@ -10,7 +10,7 @@ class User
 
   has_secure_password
 
-	validates :login, :email, :presence => true, :uniqueness => {:case_sensitive => false}
+  validates :login, :email, :presence => true, :uniqueness => {:case_sensitive => false}
   validates :login, :format => {:with => /\A\w+\z/, :message => 'only A-Z, a-z, _ allowed'}, :length => {:in => 3..20} 
   validates :email, :format => {:with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/}, :uniqueness => {:case_sensitive => false}
   validates :password, :presence => true, :on => :create

@@ -1,8 +1,7 @@
 .wrapper
-  .container
-    .content
-      - if @posts.any?
-        .posts
-          = render :partial => 'post', :collection => @posts
-        = paginate @posts
+  .main
+    - if @posts.any?
+      .posts
+        = render :partial => 'post', :collection => @posts
+      = paginate @posts
   = render :partial => 'layouts/sidebar'
