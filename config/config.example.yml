@@ -1,4 +1,5 @@
 defaults: &defaults
+  secret_token: "e8ae543d76660100ac27da145751399ef1d891ff095d44950ed203f735ac7583e4780731b3b61bade49707be2e30117fba3c3a5e09ce3ba6f5bdb19f24a5cabe"
   admin_emails:
     - "jiema8@gmail.com"
 
