@@ -1,6 +1,7 @@
 .wrapper
   .main
-    = form_for @post, :validate => true do |f|
-      p= f.text_field :title, placeholder: t('posts.title')
-      p= f.text_area :content
-      p= f.submit t('posts.new'), disable_with: t('form_disable_with')
+    .form-box
+      = form_for @post, :validate => true do |f|
+        div= f.text_field :title, placeholder: t('posts.title')
+        div= f.text_area :content
+        div= f.submit t('posts.new'), disable_with: t('form_disable_with'), class: 'btn'

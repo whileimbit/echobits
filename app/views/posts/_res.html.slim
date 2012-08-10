@@ -1,7 +1,8 @@
-.res
+article.res
   .info
-    span.login
-      = res.user.login
-    span.meta
-      = format_time res.created_at
+    .meta
+      span.login
+        = res.user.login
+      span.time
+        = format_time res.created_at
   = format_text res.content

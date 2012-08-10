@@ -3,7 +3,7 @@ EchoBits::Application.routes.draw do
 
   resources :posts do
     member do
-      post :show
+      post :reply
     end
     resources :responses, :only => [:create]
   end

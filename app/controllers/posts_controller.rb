@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_filter :require_logined, :except => [:index]
-  before_filter :find_post, :only => [:show]
+  before_filter :require_logined, :except => [:index, :show]
+  before_filter :find_post, :only => [:show, :reply]
 
   def index
     @posts = Post.active.page params[:page]
@@ -17,20 +17,21 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path
     else
-      redner new_post_path
+      render new_post_path
     end
   end
 
   def show
-    if request.post?
-      @res = current_user.responses.new params[:response]
-      @res.post = @post
-      if @res.save
-        redirect_to @post
-      end
-    end
     @res = Response.new
-    @ress = @post.responses.latest
+    @ress = @post.responses
+  end
+
+  def reply
+    @res = current_user.responses.new params[:response]
+    @res.post = @post
+    if @res.save
+      redirect_to post_path(@post)
+    end
   end
 
   protected

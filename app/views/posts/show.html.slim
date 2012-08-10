@@ -1,8 +1,10 @@
 .wrapper
   .main
-    = form_for @res, url: post_path(@post) do |f|
-      = f.text_area :content
-      = f.submit t('posts.reply'), disable_with: t('form_disable_with')
+    .form-box
+      - if current_user
+        = form_for @res, url: reply_post_path(@post) do |f|
+          div= f.text_area :content, class: "middle"
+          div= f.submit t('posts.reply'), disable_with: t('form_disable_with'), class: 'btn'
     = render :partial => 'post', :locals => { :post => @post }
     - if @ress.any?
       = render :partial => 'res', :collection => @ress

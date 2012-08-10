@@ -1,14 +1,19 @@
-.post
+article.post
   .info
-    span.title= post.title
-    span.login
-      = post.user.login
-    span.meta
-      = format_time post.created_at
-    span.reply
-      - if @is_home and current_user
-        = link_to t('posts.reply'), post_path(post)
+    div
+      span.title
+        = link_to post.title, post_path(post)
+      span (#{post.responses.count})
+      span.reply
+        - if @is_home and current_user
+          = link_to t('posts.reply'), post_path(post)
+    .meta
+      span.login
+        = post.user.login
+      span.time
+        = format_time post.created_at
   .content
     = format_text post.content
+  div.responses
     - if @is_home and post.responses.any?
       = render :partial => 'res', :collection => post.responses.recent

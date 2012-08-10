@@ -2,6 +2,17 @@ html, body {
   font-size: 14px;
 }
 
+a {
+  color: #0088CC;
+  text-shadow: 2px 2px 2px #E9E9E9;
+  text-decoration: none;
+
+  &:hover {
+    color: #DA3E3E;
+    text-decoration: underline;
+  }
+}
+
 header {
   width: 960px;
   padding: 10px;
@@ -50,19 +61,36 @@ dl {
     font-weight: bold;
   }
 
-  .info {
-    span {
-      margin-right: 5px;
-    }
+  .reply {
+    float: right;
   }
 }
 
+.info {
+  .login {
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
+
+.meta {
+  color: #333;
+  font-size: 12px;
+  span {
+    margin-right: 5px;
+  }
+}
+
+.responses {
+  margin-top: 10px;
+  border-top: 1px dashed #E3E2E1;
+}
+
 .res {
-  background-color: #D6DAF0;
-  border-style: none none solid none;
-  border-width: medium 1px 1px medium;
-  padding: 10px;
-  display: table;
+  border-color: #E3E2E1;
+  border-style: none dashed dashed solid;
+  border-width: medium 1px 1px 10px;
+  padding: 10px 0px 0px 20px;
 }
 
 .sideRight {
@@ -73,6 +101,40 @@ dl {
   padding-left: 10px;
   position: relative;
   border: 1px dashed #E3E2E1;
+}
+
+/**
+ * form css
+ */
+.form-box {
+  margin-bottom: 10px;
+}
+
+textarea {
+  color:#666;
+  -moz-border-radius: 8px; -webkit-border-radius: 8px;
+  margin:5px 0px 10px 5px;
+  padding:10px;
+  height:75px;
+  width:670px;
+  border:#999 1px solid;
+  box-shadow: 0 0 5px rgba(81, 203, 238, 0);
+  -webkit-box-shadow: 0 0 5px rgba(81, 203, 238, 0);
+  -moz-box-shadow: 0 0 5px rgba(81, 203, 238, 0);
+
+  &:focus {
+    color:#000;
+    outline:none;
+    border:#35a5e5 1px solid;
+  }
+
+  &.middle {
+    height: 75px;
+  }
+}
+
+.btn {
+  float: right;
 }
 
 footer {
