@@ -1,15 +1,16 @@
 html, body {
-  font-size: 14px;
+  font-size: 16px;
+  color: #800000;
+  background-color: #FFFFEE;
 }
 
 a {
-  color: #0088CC;
-  text-shadow: 2px 2px 2px #E9E9E9;
-  text-decoration: none;
+  &:visited {
+    color: #0000EE;
+  }
 
   &:hover {
-    color: #DA3E3E;
-    text-decoration: underline;
+    color: #DD0000;
   }
 }
 
@@ -41,10 +42,8 @@ header {
 }
 
 .main {
-  width: 700px;
+  width: 720px;
   float: left;
-  overflow: hidden;
-  border: 1px dashed #E3E2E1;
 }
 
 dl {
@@ -55,26 +54,35 @@ dl {
 
 .post {
   padding: 10px;
-  border-bottom: 1px dashed #E3E2E1;
+  border-bottom: 1px solid #E3E2E1;
 
   .title {
     font-weight: bold;
+    color: #cc1105;
+
+    a {
+      color: #cc1105;
+    }
   }
 
   .reply {
-    float: right;
   }
 }
 
 .info {
   .login {
+    color: #117743;
     font-weight: bold;
     font-size: 14px;
+  }
+
+  span {
+    margin-right: 5px;
   }
 }
 
 .meta {
-  color: #333;
+  color: #707070;
   font-size: 12px;
   span {
     margin-right: 5px;
@@ -83,20 +91,19 @@ dl {
 
 .responses {
   margin-top: 10px;
-  border-top: 1px dashed #E3E2E1;
 }
 
 .res {
-  border-color: #E3E2E1;
-  border-style: none dashed dashed solid;
-  border-width: medium 1px 1px 10px;
-  padding: 10px 0px 0px 20px;
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #F0E0D6;
+  border-left: 5px solid #666;
 }
 
 .sideRight {
   float: left;
   margin-right: -3px;
-  width: 230px;
+  width: 180px;
   margin-left: 10px;
   padding-left: 10px;
   position: relative;
@@ -135,6 +142,10 @@ textarea {
 
 .btn {
   float: right;
+}
+
+.pagination {
+
 }
 
 footer {

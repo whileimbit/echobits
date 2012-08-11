@@ -16,7 +16,7 @@ class Response
   attr_accessible :content
 
   scope :latest, order_by([[:created_at, :desc]])
-  scope :recent, order_by([[:created_at, :desc]]).limit(5)
+  scope :recent, order_by([[:created_at, :desc]]).limit(10)
 
   def update_post
     post.set :actived_at, self.created_at.utc
